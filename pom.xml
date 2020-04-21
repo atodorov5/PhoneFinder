@@ -4,13 +4,47 @@
   <artifactId>PhoneFinder</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
-  <dependencies>
-   <dependency>
+ 
+ <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+ 
+        <dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.17</version>
+</dependency>
+ 
+
+<!-- https://mvnrepository.com/artifact/org.openjfx/javafx-media -->
+<dependency>
     <groupId>org.openjfx</groupId>
     <artifactId>javafx-media</artifactId>
     <version>12-ea+8</version>
 </dependency>
-</dependencies>
+
+
+	<dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>5.4.7.Final</version>
+	</dependency>
+
+<dependency>
+    <groupId>org.controlsfx</groupId>
+    <artifactId>controlsfx</artifactId>
+    <version>8.40.14</version>
+</dependency>
+
+
+
+
+  </dependencies>
   
   
 </project>
