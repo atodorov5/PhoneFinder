@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane fx:id="mainBP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainViewController">
+<BorderPane fx:id="mainBP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainViewController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
@@ -32,18 +32,18 @@
       <AnchorPane fx:id="Home" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
          <children>
             <Button layoutX="58.0" layoutY="244.0" mnemonicParsing="false" text="Търсене" />
-            <TableView layoutX="182.0" layoutY="36.0" prefHeight="263.0" prefWidth="404.0">
+            <TableView fx:id="tbPhone" layoutX="182.0" layoutY="36.0" prefHeight="263.0" prefWidth="404.0">
               <columns>
-                <TableColumn prefWidth="110.0" text="Марка" />
-                <TableColumn prefWidth="91.0" text="Тип" />
-                  <TableColumn prefWidth="67.0" text="Камера" />
-                  <TableColumn prefWidth="135.0" text="Процесор" />
+                <TableColumn fx:id="tcBrand" prefWidth="110.0" text="Марка" />
+                <TableColumn fx:id="tcType" prefWidth="91.0" text="Тип" />
+                  <TableColumn fx:id="tcCamera" prefWidth="67.0" text="Камера" />
+                  <TableColumn fx:id="tcProcessor" prefWidth="135.0" text="Процесор" />
               </columns>
             </TableView>
-            <ComboBox layoutX="14.0" layoutY="74.0" prefWidth="150.0" />
-            <ComboBox layoutX="14.0" layoutY="116.0" prefWidth="150.0" />
-            <ComboBox layoutX="15.0" layoutY="158.0" prefWidth="150.0" />
-            <ComboBox layoutX="15.0" layoutY="199.0" prefWidth="150.0" />
+            <ComboBox fx:id="cbBrand" layoutX="14.0" layoutY="74.0" prefWidth="150.0" />
+            <ComboBox fx:id="cbType" layoutX="14.0" layoutY="116.0" prefWidth="150.0" />
+            <ComboBox fx:id="cbCamera" layoutX="15.0" layoutY="158.0" prefWidth="150.0" />
+            <ComboBox fx:id="cbProcessor" layoutX="15.0" layoutY="199.0" prefWidth="150.0" />
             <Label layoutX="70.0" layoutY="51.0" text="Марка" textFill="WHITE" />
             <Label layoutX="78.0" layoutY="99.0" text="Тип" textFill="WHITE" />
             <Label layoutX="68.0" layoutY="141.0" text="Камера" textFill="WHITE" />

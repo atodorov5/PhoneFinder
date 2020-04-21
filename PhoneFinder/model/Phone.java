@@ -15,7 +15,7 @@ public class Phone {
 	
 	
 private int ID;
-private Brand brand;
+private  Brand brand;
 private Type type;
 private Camera camera;
 private Processor processor;
@@ -50,7 +50,7 @@ public void setID(int iD) {
 	ID = iD;
 }
 @ManyToOne(cascade = CascadeType.ALL)
-public Brand getBrand() {
+public  Brand getBrand() {
 	return brand;
 }
 public void setBrand(Brand brand) {
