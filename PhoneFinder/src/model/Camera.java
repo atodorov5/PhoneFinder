@@ -22,6 +22,11 @@ public class Camera {
 		ID_Camera = iD_Camera;
 		Camera_Name = camera_Name;
 	}
+	public Camera(String camera_Name) {
+		super();
+		Camera_Name = camera_Name;
+	}
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ID_Camera")
@@ -39,7 +44,7 @@ public class Camera {
 	}
 	@Override
 	public String toString() {
-		return "Camera [ID_Camera=" + ID_Camera + ", Camera_Name=" + Camera_Name + "]";
+		return Camera_Name;
 	}
 	
 	

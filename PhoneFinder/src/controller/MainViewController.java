@@ -12,6 +12,7 @@ public class MainViewController {
 	@FXML private AnchorPane newCarap= new AnchorPane();
 	@FXML private BorderPane mainBP;
 	@FXML private AnchorPane Home;
+	
 	@FXML    public void addSpecsMenuItem() throws IOException {
         newCarap.getChildren().clear();
         newCarap.getChildren().add((Node) FXMLLoader.load(getClass().getResource("/controller/AddSpecsView.fxml")));
@@ -22,5 +23,10 @@ public class MainViewController {
         mainBP.setCenter(Home);
     }
 
+	@FXML    public void addPhoneMenuItem() throws IOException {
+        newCarap.getChildren().clear();
+        newCarap.getChildren().add((Node) FXMLLoader.load(getClass().getResource("/controller/AddPhoneView.fxml")));
+        mainBP.setCenter(newCarap);
+    }
 
 }

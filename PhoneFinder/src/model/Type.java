@@ -18,6 +18,11 @@ public class Type {
 		ID_Type = iD_Type;
 		Type_Name = type_Name;
 	}
+	public Type(String type_Name) {
+		super();
+		Type_Name = type_Name;
+	}
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ID_Type")
@@ -35,7 +40,7 @@ public class Type {
 	}
 	@Override
 	public String toString() {
-		return "Type [ID_Type=" + ID_Type + ", Type_Name=" + Type_Name + "]";
+		return Type_Name;
 	}
 	
 	

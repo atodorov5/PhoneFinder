@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane fx:id="mainBP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainViewController">
+<BorderPane fx:id="mainBP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainViewController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
@@ -21,7 +21,7 @@
                </items></Menu>
           <Menu mnemonicParsing="false" text="Добави">
             <items>
-              <MenuItem mnemonicParsing="false" text="Телефон" />
+              <MenuItem mnemonicParsing="false" onAction="#addPhoneMenuItem" text="Телефон" />
                   <MenuItem mnemonicParsing="false" onAction="#addSpecsMenuItem" text="Спецификация" />
             </items>
           </Menu>
@@ -29,7 +29,7 @@
       </MenuBar>
    </top>
    <center>
-      <AnchorPane fx:id="Home" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="Home" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
          <children>
             <Button layoutX="58.0" layoutY="244.0" mnemonicParsing="false" text="Търсене" />
             <TableView layoutX="182.0" layoutY="36.0" prefHeight="263.0" prefWidth="404.0">
@@ -44,10 +44,10 @@
             <ComboBox layoutX="14.0" layoutY="116.0" prefWidth="150.0" />
             <ComboBox layoutX="15.0" layoutY="158.0" prefWidth="150.0" />
             <ComboBox layoutX="15.0" layoutY="199.0" prefWidth="150.0" />
-            <Label layoutX="70.0" layoutY="51.0" text="Марка" />
-            <Label layoutX="78.0" layoutY="99.0" text="Тип" />
-            <Label layoutX="68.0" layoutY="141.0" text="Камера" />
-            <Label layoutX="62.0" layoutY="182.0" text="Процесор" />
+            <Label layoutX="70.0" layoutY="51.0" text="Марка" textFill="WHITE" />
+            <Label layoutX="78.0" layoutY="99.0" text="Тип" textFill="WHITE" />
+            <Label layoutX="68.0" layoutY="141.0" text="Камера" textFill="WHITE" />
+            <Label layoutX="62.0" layoutY="182.0" text="Процесор" textFill="WHITE" />
          </children>
       </AnchorPane>
    </center>

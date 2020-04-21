@@ -19,10 +19,22 @@ private Brand brand;
 private Type type;
 private Camera camera;
 private Processor processor;
-Phone(){}
+
+
+  public Phone(){
+	  
+  }
 public Phone(int iD, Brand brand, Type type, Camera camera, Processor processor) {
 	super();
 	ID = iD;
+	this.brand = brand;
+	this.type = type;
+	this.camera = camera;
+	this.processor = processor;
+}
+
+public Phone(Brand brand, Type type, Camera camera, Processor processor) {
+	super();
 	this.brand = brand;
 	this.type = type;
 	this.camera = camera;

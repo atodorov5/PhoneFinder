@@ -21,6 +21,12 @@ public Brand(int iD_Brand, String brand_Name) {
 	ID_Brand = iD_Brand;
 	Brand_Name = brand_Name;
 }
+public Brand(String brand_Name) {
+	super();
+	Brand_Name = brand_Name;
+}
+
+
 @Id
 @GeneratedValue(strategy=GenerationType.IDENTITY)
 @Column(name="ID_Brand")
@@ -38,7 +44,7 @@ public void setBrand_Name(String brand_Name) {
 }
 @Override
 public String toString() {
-	return "Brand [ID_Brand=" + ID_Brand + ", Brand_Name=" + Brand_Name + "]";
+	return  Brand_Name;
 }
 
 

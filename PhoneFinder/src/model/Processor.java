@@ -18,6 +18,12 @@ public Processor(int iD_Processor, String processor_Name) {
 	ID_Processor = iD_Processor;
 	Processor_Name = processor_Name;
 }
+
+public Processor(String processor_Name) {
+	super();
+	Processor_Name = processor_Name;
+}
+
 @Id
 @GeneratedValue(strategy=GenerationType.IDENTITY)
 @Column(name="ID_Processor")
@@ -35,7 +41,7 @@ public void setProcessor_Name(String processor_Name) {
 }
 @Override
 public String toString() {
-	return "Processor [ID_Processor=" + ID_Processor + ", Processor_Name=" + Processor_Name + "]";
+	return Processor_Name;
 }
 
 
