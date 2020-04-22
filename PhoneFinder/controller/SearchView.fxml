@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="380.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SearchViewController">
+   <children>
+      <AnchorPane prefHeight="380.0" prefWidth="600.0" style="-fx-background-color: grey;">
+         <children>
+            <TableView fx:id="tbPhone" layoutX="11.0" layoutY="96.0" prefHeight="263.0" prefWidth="580.0">
+               <columns>
+                  <TableColumn fx:id="tcBrand" prefWidth="161.0" text="Марка" />
+                  <TableColumn fx:id="tcType" prefWidth="76.0" text="Тип" />
+                  <TableColumn fx:id="tcCamera" prefWidth="79.0" text="Камера" />
+                  <TableColumn fx:id="tcProcessor" prefWidth="261.0" text="Процесор" />
+               </columns>
+            </TableView>
+            <TextField fx:id="tfbrand" layoutX="11.0" layoutY="54.0" prefHeight="25.0" prefWidth="481.0" />
+            <Label layoutX="184.0" layoutY="25.0" text="Въведете критерии за търсене" textFill="WHITE" />
+            <ImageView fx:id="photo" fitHeight="93.0" fitWidth="88.0" layoutX="502.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

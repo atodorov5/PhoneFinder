@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
@@ -15,9 +14,9 @@
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" onAction="#GoHome" text="Начало">
+          <Menu mnemonicParsing="false" onAction="#searchMenuItem" text="Начало">
                <items>
-                  <MenuItem mnemonicParsing="false" onAction="#GoHome" text="Търсене" />
+                  <MenuItem mnemonicParsing="false" onAction="#searchMenuItem" text="Търсене" />
                </items></Menu>
           <Menu mnemonicParsing="false" text="Добави">
             <items>
@@ -31,7 +30,6 @@
    <center>
       <AnchorPane fx:id="Home" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="58.0" layoutY="244.0" mnemonicParsing="false" text="Търсене" />
             <TableView fx:id="tbPhone" layoutX="182.0" layoutY="36.0" prefHeight="263.0" prefWidth="404.0">
               <columns>
                 <TableColumn fx:id="tcBrand" prefWidth="110.0" text="Марка" />

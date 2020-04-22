@@ -31,7 +31,7 @@ import model.Phone;
 import model.Processor;
 import model.Type;
 
-public class MainViewController implements Initializable{
+public class MainViewController  implements Initializable {
 	@FXML private AnchorPane newCarap= new AnchorPane();
 	@FXML private BorderPane mainBP;
 	@FXML private AnchorPane Home;
@@ -65,116 +65,23 @@ public class MainViewController implements Initializable{
         newCarap.getChildren().add((Node) FXMLLoader.load(getClass().getResource("/controller/AddPhoneView.fxml")));
         mainBP.setCenter(newCarap);
     }
-	
-	public void TableViewFill() {
-		
-		Session session = model.HibernateUtil.getSessionFactory().openSession();
-	    session.beginTransaction();
-	    Query query = session.createQuery("from Phone");
-	    ObservableList<Phone> phonelist = FXCollections.observableArrayList(query.list());
-
-	  
-	    tbPhone.setItems(phonelist);
-	    session.getTransaction().commit();
-	 
-	    FilteredList<Phone> filteredData = new FilteredList<Phone>(phonelist, p -> true);
-	    
-		   
-	    cbBrand.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Brand>()
-        {
-
-
-            @Override
-            public void changed(ObservableValue<? extends Brand> observable, Brand oldValue, Brand newValue) {
-                // TODO Auto-generated method stub
-            	
-                filteredData.setPredicate(person -> {
-                	  if (newValue == null) {
-                          return true;
-                      }
-
-
-
-                      if (person.getBrand().toString().equals(newValue.getBrand_Name())) {
-                          return true;
-                      }
-                    return false;
-
-                });
-            }});
-	    
-	    
-	    
-	    cbCamera.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Camera>()
-        {
-
-
-            @Override
-            public void changed(ObservableValue<? extends Camera> observable, Camera oldValue, Camera newValue) {
-                // TODO Auto-generated method stub
-            	
-                filteredData.setPredicate(person -> {
-                	  if (newValue == null) {
-                          return true;
-                      }
-
-
-
-                      if (person.getCamera().toString().equals(newValue.getCamera_Name())) {
-                          return true;
-                      }
-                    return false;
-
-                });
-            }});
-	    
-	    
-	        SortedList<Phone> sortedData = new SortedList<Phone>(filteredData);
-	        sortedData.comparatorProperty().bind(tbPhone.comparatorProperty());
-	        tbPhone.setItems(sortedData);
-	    
-	}
-	
-
-
-
+	@FXML    public void searchMenuItem() throws IOException {
+        newCarap.getChildren().clear();
+        newCarap.getChildren().add((Node) FXMLLoader.load(getClass().getResource("/controller/SearchView.fxml")));
+        mainBP.setCenter(newCarap);
+    }
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
-		tcBrand.setCellValueFactory(new PropertyValueFactory<Phone, Brand>("brand"));
-		tcCamera.setCellValueFactory(new PropertyValueFactory<Phone, Camera>("camera"));
-		tcType.setCellValueFactory(new PropertyValueFactory<Phone, Type>("type"));
-		tcProcessor.setCellValueFactory(new PropertyValueFactory<Phone, Processor>("processor"));
-		cbBrandFill();
-		cbCameraFill();
-		TableViewFill();
-		
-		
-		
+		try {
+			searchMenuItem();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-
-   
-	public void cbBrandFill() {
-		Session session = model.HibernateUtil.getSessionFactory().openSession();
-		session.beginTransaction();
-
-		Query query3 = session.createQuery("from Brand");
-		ObservableList<Brand> list3 = FXCollections.observableArrayList(query3.list());
-		cbBrand.setItems(list3);
-		session.getTransaction().commit();
-		
-	}
-	public void cbCameraFill() {
-		Session session = model.HibernateUtil.getSessionFactory().openSession();
-		session.beginTransaction();
-
-		Query query3 = session.createQuery("from Camera");
-		ObservableList<Camera> list3 = FXCollections.observableArrayList(query3.list());
-		cbCamera.setItems(list3);
-		session.getTransaction().commit();
-		
-	}
-
+	
+	
 
 }
